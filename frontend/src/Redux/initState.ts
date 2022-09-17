@@ -1,15 +1,14 @@
-import { IFetchData } from "../Interfaces/interface"
+import { INavigation, IPost } from "../Interfaces/interface"
 
 
 export interface IGetData {
-    data: IFetchData,
+    posts: IPost[],
     error: null | string;
+    getNavigationMenu: INavigation[]
 }
 
 export const initState: IGetData = {
-    data: {
-        navigation: [],
-        posts: []
-    },
+    posts: [],
+    getNavigationMenu: [],
     error: '',
 }

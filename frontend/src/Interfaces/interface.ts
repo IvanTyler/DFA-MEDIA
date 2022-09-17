@@ -1,12 +1,8 @@
-export interface IFetchData {
-    navigation: INavigation[];
-    posts: IPost[];
-}
-
 export interface INavigation {
     id: string;
     name: string;
     link: string;
+    active: false;
     image: string;
 }
 

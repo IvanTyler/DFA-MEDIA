@@ -1,0 +1,47 @@
+.sectionNavigationList {
+    &__borderRight {
+        &::before {
+            content: '';
+            border-left: solid 4.1px #6781F7;
+            display: inline-block;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &__icon {
+        width: 21px;
+        height: 21px;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding-left: 36px;
+        cursor: pointer;
+
+        &:not(:first-child) {
+            margin-top: 32px;
+        }
+    }
+
+    &__text {
+        margin-left: 24px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #8B97AE;
+    }
+
+    &__link:hover>&__text {
+        opacity: 0.5;
+    }
+}

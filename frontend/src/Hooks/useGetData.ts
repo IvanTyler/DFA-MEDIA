@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { getDataFetch } from "../Redux/action/dataAction"
+import { getDataFetch, getDataFetchNavigation } from "../Redux/action/dataAction"
 import { useTypeSelector } from "./useTypeSelector"
 import { useEffect } from 'react';
 
@@ -8,8 +8,10 @@ export const useGetData = () => {
 
     useEffect(() => {
         dispath(getDataFetch())
+        dispath(getDataFetchNavigation())
     }, [])
 
-    const { navigation, posts } = useTypeSelector(state => state.data.data)
-    return { navigation, posts }
+    const { posts, getNavigationMenu } = useTypeSelector(state => state.data)
+
+    return { getNavigationMenu, posts }
 }
