@@ -1,0 +1,121 @@
+.sectionPostsList {
+    &__item {
+        width: calc(20% - 35px);
+        padding: 15px 15px 21px;
+        background-color: #192233;
+        opacity: 0.5;
+        border-radius: 20px;
+        margin: 17.5px;
+    }
+
+    &__item.active {
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__top,
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__top {
+        padding-bottom: 4px;
+        border-bottom: solid 1px #707D96;
+    }
+
+    &__bottom {
+        margin-top: 8px;
+    }
+
+    &__paymentLevel,
+    &__activePartners {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    &__title.activePartners {
+        max-width: 60px;
+    }
+
+    &__title.paymentLevel {
+        max-width: 50px;
+    }
+
+    &__paymentLevel,
+    &__activePartners,
+    &__title {
+        color: #fff;
+    }
+
+    &__paymentLevel {
+        width: 50px;
+
+    }
+
+    &__activePartners {
+        display: inline-block;
+        width: 60px;
+        text-align: left;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    &__userList {
+        margin-top: 25px;
+        height: 140px;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #8B97AE;
+            border-radius: 15px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 1px;
+            height: 13.69px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #192233;
+            border-radius: 15px;
+            border: 1px solid #192233;
+        }
+    }
+
+    &__userItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 8px;
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__userAvatar {
+        width: 35px;
+        height: 35px;
+        opacity: 0.5;
+        border: 1px solid #DCE0F4;
+        border-radius: 50%;
+    }
+
+    &__userAvatar.active {
+        opacity: 1;
+    }
+
+    &__userName {
+        margin-left: 5px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #fff;
+    }
+}

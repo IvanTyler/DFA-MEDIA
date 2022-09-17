@@ -9,14 +9,12 @@ interface NavigationItemProps {
     item: INavigation,
 }
 
-
 export const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
     const dispatch = useDispatch()
 
     const changeStatusHandlet = (id: string) => {
         dispatch(getNavigationItemId(id))
     }
-    console.log(item.active)
     return (
         <li className={item.active ? style.sectionNavigationList__borderRight + ' ' + style.sectionNavigationList__item : style.sectionNavigationList__item}
             onClick={() => changeStatusHandlet(item.id)}

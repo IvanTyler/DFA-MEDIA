@@ -1,0 +1,13 @@
+.sectionPosts {
+    padding: 40px 30px 30px 30px;
+    background-color: #212C42;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px 50px 0px 0px;
+    margin-bottom: 1px;
+    .sectionPostsList {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -17.5px;
+    }
+}

@@ -39,7 +39,6 @@ export const getDataFetchNavigation = () => {
 
 
 export const getNavigationItemId = (id: string) => {
-    console.log(id);
     return {
         type: GetDataActionTypesEnum.GET_DATA_STATUS_ITEM,
         active: id,

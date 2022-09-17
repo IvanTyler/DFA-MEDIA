@@ -10,7 +10,8 @@ export interface IPost {
     id: string;
     active: boolean;
     paymentLevel: number;
-    users: IUser;
+    activePartners: number;
+    users: IUser[];
 }
 
 export interface IUser {
