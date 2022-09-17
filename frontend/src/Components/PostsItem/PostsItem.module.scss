@@ -2,8 +2,7 @@
     &__item {
         width: calc(20% - 35px);
         padding: 15px 15px 21px;
-        background-color: #192233;
-        opacity: 0.5;
+        background-color: rgba(25, 34, 51, 0.5);
         border-radius: 20px;
         margin: 17.5px;
     }
@@ -84,7 +83,6 @@
         &::-webkit-scrollbar-track {
             background-color: #192233;
             border-radius: 15px;
-            border: 1px solid #192233;
         }
     }
 
