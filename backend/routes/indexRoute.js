@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path')
 const { v4: uuidv4 } = require('uuid');
 
 const dataMock = () => {
@@ -10,65 +9,70 @@ const dataMock = () => {
                 id: uuidv4(),
                 name: 'Дашборд',
                 link: 'dashboard',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'dashboard.svg'),
+                active: false,
+                image: '/img/icon-menu-navigation/dashboard.svg',
             },
             {
                 id: uuidv4(),
-                name: 'activityExchange',
-                link: '#',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'activity-exchange.svg'),
+                name: 'activity exchange',
+                link: 'activityExchange',
+                active: false,
+                image: 'img/icon-menu-navigation/activity-exchange.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Биржа блогеров',
                 link: 'exchange-bloggers',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'exchange-bloggers.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/exchange-bloggers.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Взаимопиар',
                 link: 'mutualPR',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'mutual-PR.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/mutual-PR.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Моя структура',
                 link: 'myStructure',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'my-structure.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/my-structure.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Магазин',
                 link: 'score',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'score.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/score.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Марафон',
                 link: 'marathon',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'marathon.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/marathon.svg',
             },
             {
                 id: uuidv4(),
                 name: 'Лендинги',
                 link: 'landingPages',
-                image: path.join(__dirname, '..', 'public', 'img', 'icon-menu-navigation', 'landing-pages.svg'),
+                active: false,
+                image: 'img/icon-menu-navigation/landing-pages.svg',
             }
         ],
         posts: Array.from(Array(14)).map((_, i) => {
-            const randomNumber = Math.floor(Math.random() * (43233 - 133) + 133)
-            const randomActivePost = Math.floor(Math.random() * (5 - 1) + 1)
-            const randomActiveUser = Math.floor(Math.random() * (5 - 1) + 1)
             return {
                 id: uuidv4(),
-                active: randomActivePost > 3 ? true : false,
+                active: Math.floor(Math.random() * (5 - 1) + 1) > 3 ? true : false,
                 paymentLevel: i + 1,
-                activePartners: randomNumber,
+                activePartners: Math.floor(Math.random() * (43233 - 133) + 133),
                 users: Array.from(Array(15)).map((_, i) => {
                     return {
                         id: uuidv4(),
-                        active: randomActiveUser > 3 ? true : false,
-                        avatar: path.join(__dirname, '..', 'public', 'img', 'data-posts', 'avatar.png'),
+                        active: Math.floor(Math.random() * (5 - 1) + 1) > 3 ? true : false,
+                        avatar: 'img/data-posts/avatar.png',
                         name: `kris_anfonova ${i + 1}`,
                     }
                 }),
@@ -80,5 +84,11 @@ const dataMock = () => {
 const data = dataMock()
 
 router.get('/', (req, res) => res.json(data))
+
+router.patch('/:id', (req, res) => {
+
+    const { id } = req.body
+    console.log(id);
+})
 
 module.exports = router;
