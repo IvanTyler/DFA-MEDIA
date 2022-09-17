@@ -14,7 +14,7 @@ const dataMock = () => {
             },
             {
                 id: uuidv4(),
-                name: 'activity exchange',
+                name: 'Биржа активности',
                 link: 'activityExchange',
                 active: false,
                 image: 'img/icon-menu-navigation/activity-exchange.svg',
@@ -65,14 +65,14 @@ const dataMock = () => {
         posts: Array.from(Array(14)).map((_, i) => {
             return {
                 id: uuidv4(),
-                active: Math.floor(Math.random() * (5 - 1) + 1) > 3 ? true : false,
+                active: Math.floor(Math.random() * (5 - 1) + 1) > 2 ? true : false,
                 paymentLevel: i + 1,
                 activePartners: Math.floor(Math.random() * (43233 - 133) + 133),
                 users: Array.from(Array(15)).map((_, i) => {
                     return {
                         id: uuidv4(),
                         active: Math.floor(Math.random() * (5 - 1) + 1) > 3 ? true : false,
-                        avatar: 'img/data-posts/avatar.png',
+                        avatar: 'https://vk-wiki.ru/wp-content/uploads/2019/04/male-user-profile-picture.png',
                         name: `kris_anfonova ${i + 1}`,
                     }
                 }),
@@ -84,11 +84,5 @@ const dataMock = () => {
 const data = dataMock()
 
 router.get('/', (req, res) => res.json(data))
-
-router.patch('/:id', (req, res) => {
-
-    const { id } = req.body
-    console.log(id);
-})
 
 module.exports = router;
