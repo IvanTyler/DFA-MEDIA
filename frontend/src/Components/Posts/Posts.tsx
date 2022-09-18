@@ -11,12 +11,14 @@ export const Posts: React.FC = () => {
 
     return (
         <section className={style.sectionPosts}>
-            <ul className={style.sectionPostsList}>
-                <List
-                    items={posts}
-                    renderItem={(post: IPost) => <PostsItem post={post} key={post.id} />}
-                />
-            </ul>
+            <div className={style.sectionPosts__wrapperContent}>
+                <ul className={style.sectionPostsList}>
+                    <List
+                        items={posts}
+                        renderItem={(post: IPost) => <PostsItem post={post} key={post.id} />}
+                    />
+                </ul>
+            </div>
         </section>
     )
 }

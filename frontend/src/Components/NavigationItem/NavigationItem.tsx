@@ -16,11 +16,14 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
         dispatch(getNavigationItemId(id))
     }
     return (
-        <li className={item.active ? style.sectionNavigationList__borderRight + ' ' + style.sectionNavigationList__item : style.sectionNavigationList__item}
-            onClick={() => changeStatusHandlet(item.id)}
+        <li className={item.active ?
+            style.sectionNavigationList__borderRight + ' ' + style.sectionNavigationList__item :
+            style.sectionNavigationList__item}
         >
-            <Link to={item.link} className={style.sectionNavigationList__link}>
-                <img className={style.sectionNavigationList__icon} src={`${BACKEND_HOST}${item.image}`} />
+            <Link to={item.link} className={style.sectionNavigationList__link} onClick={() => changeStatusHandlet(item.id)}>
+                <div className={style.sectionNavigationList__wrapperIcon}>
+                    <img className={style.sectionNavigationList__icon} src={`${BACKEND_HOST}${item.image}`} />
+                </div>
                 <span className={style.sectionNavigationList__text}>{item.name}</span>
             </Link>
         </li >

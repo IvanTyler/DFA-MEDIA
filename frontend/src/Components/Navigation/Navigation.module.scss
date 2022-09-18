@@ -1,5 +1,39 @@
 .sectionNavigation {
-    min-width: 200px;
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    background-color: #192233;
     padding-top: 133px;
+
+    &__wrapperSandwitch {
+        position: absolute;
+        top: 20px;
+        left: 36px;
+        display: none;
+
+        @media (max-width: 1150px) {
+            display: block;
+            left: 14px;
+            top: 46.5px;
+        }
+    }
+
+    @media (max-width: 1150px) {
+        position: fixed;
+        z-index: 1;
+        margin-left: -14px;
+    }
+}
+
+.sectionNavigationList {
+    min-width: 200px;
+
+    @media (max-width: 1150px) {
+        display: none;
+    }
+}
+
+.sectionNavigationList.show {
+    @media (max-width: 1150px) {
+        display: block;
+    }
 }

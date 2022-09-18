@@ -5,6 +5,23 @@
         background-color: rgba(25, 34, 51, 0.5);
         border-radius: 20px;
         margin: 17.5px;
+
+        @media (max-width: 1380px) {
+            width: calc(25% - 35px);
+        }
+
+        @media (max-width: 960px) {
+            margin: 10px;
+            width: calc(33.3% - 20px);
+        }
+
+        @media (max-width: 760px) {
+            width: calc(50% - 20px);
+        }
+
+        @media (max-width: 500px) {
+            width: calc(100% - 20px);
+        }
     }
 
     &__item.active {
@@ -29,6 +46,7 @@
 
     &__paymentLevel,
     &__activePartners {
+        font-family: 'PT-Root-UI_Medium';
         font-weight: 500;
         font-size: 15px;
         line-height: 18px;
@@ -50,7 +68,6 @@
 
     &__paymentLevel {
         width: 50px;
-
     }
 
     &__activePartners {
@@ -60,6 +77,7 @@
     }
 
     &__title {
+        font-family: 'PT-Root-UI_Regular';
         font-weight: 400;
         font-size: 12px;
         line-height: 13px;
@@ -67,8 +85,8 @@
 
     &__userList {
         margin-top: 25px;
-        height: 140px;
-        overflow-x: hidden;
+        height: 180px;
+        overflow-x: auto;
 
         &::-webkit-scrollbar-thumb {
             background-color: #8B97AE;
@@ -90,7 +108,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-right: 8px;
+        padding-right: 10px;
 
         &:not(:first-child) {
             margin-top: 10px;
@@ -103,6 +121,7 @@
         opacity: 0.5;
         border: 1px solid #DCE0F4;
         border-radius: 50%;
+        margin-right: 8px;
     }
 
     &__userAvatar.active {
@@ -110,8 +129,8 @@
     }
 
     &__userName {
-        margin-left: 5px;
         font-weight: 400;
+        font-family: 'PT-Root-UI_Regular';
         font-size: 13px;
         line-height: 16px;
         color: #fff;

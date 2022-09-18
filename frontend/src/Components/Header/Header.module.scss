@@ -1,10 +1,54 @@
+@import url('../../assets/styles/fonts.scss');
+
 .header {
     height: 117px;
+    padding-top: 36px;
+
+    @media (max-width: 1150px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+    }
+
     &__title {
+        font-family: 'PT-Root-UI_Regular';
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
         color: #fff;
         margin-left: 109px;
+
+        @media (max-width: 1150px) {
+            margin-left: 0;
+        }
+    }
+
+    &__openModalWindow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #212C42;
+        width: 230px;
+        height: 42px;
+        line-height: 45px;
+        color: #ffffff;
+        font-family: 'PT-Root-UI_Regular';
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        @media (max-width: 500px) {
+            width: 190px;
+            height: 35px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        &:hover {
+            background-color: #0b77c8;
+        }
     }
 }

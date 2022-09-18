@@ -10,9 +10,9 @@
         }
     }
 
-    &__icon {
-        width: 21px;
-        height: 21px;
+    &__wrapperIcon {
+        display: inline-block;
+        width: 22px;
     }
 
     &__item {
@@ -21,7 +21,10 @@
         align-items: center;
         height: 30px;
         padding-left: 36px;
-        cursor: pointer;
+
+        @media (max-width: 1150px) {
+            padding-left: 25px;
+        }
 
         &:not(:first-child) {
             margin-top: 32px;
@@ -30,6 +33,7 @@
 
     &__text {
         margin-left: 24px;
+        font-family: 'PT-Root-UI_Regular';
     }
 
     &__link {

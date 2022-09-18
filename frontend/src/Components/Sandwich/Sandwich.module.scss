@@ -1,0 +1,45 @@
+.sandwichList {
+    position: relative;
+    width: 24px;
+    height: 20px;
+    cursor: pointer;
+
+    &__item {
+        position: absolute;
+        width: 24px;
+        height: 4px;
+        background-color: #fff;
+        transform: rotate(0);
+        transition: top 100ms linear 270ms, -webkit-transform 280ms linear 1ms;
+        transition: transform 280ms linear 1ms, top 100ms linear 270ms;
+        transition: transform 280ms linear 1ms, top 100ms linear 270ms, -webkit-transform 280ms linear 1ms;
+    }
+
+    &__item.swTopper {
+        top: 0;
+    }
+
+    &__item.swBottom {
+        top: 7px;
+    }
+
+    &__item.swFooter {
+        top: 14px;
+    }
+    
+    &__item.swTopper.active {
+        top: 6px;
+        transform: rotate(135deg);
+    }
+    
+    &__item.swBottom.active {
+        top: 6px;
+        transform: rotate(45deg);
+    }
+    
+    &__item.swFooter.active {
+        top: -1px;
+        opacity: 0;
+    }
+}
+

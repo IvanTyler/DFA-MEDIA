@@ -6,7 +6,6 @@ interface PostsItemProps {
 }
 
 export const PostsItem: React.FC<PostsItemProps> = ({ post }) => {
-    console.log(post.users);
 
     return (
         <li className={post.active ? style.sectionPostsList__item + ' ' + style.active : style.sectionPostsList__item}>
@@ -37,7 +36,7 @@ export const PostsItem: React.FC<PostsItemProps> = ({ post }) => {
                             <img className={item.active ? style.sectionPostsList__userAvatar + ' ' + style.active : style.sectionPostsList__userAvatar} src={`${item.avatar}`} alt={item.name} />
                             <span className={style.sectionPostsList__userName}>{item.name}</span>
                         </li>
-                    }) : <p>Список отсутствует</p>
+                    }) : <p>Пользователи отсутствуют</p>
                 }
             </ul>
         </li>

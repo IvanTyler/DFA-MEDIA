@@ -1,13 +1,50 @@
 .sectionPosts {
     padding: 40px 30px 30px 30px;
     background-color: #212C42;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px 50px 0px 0px;
     margin-bottom: 1px;
-    .sectionPostsList {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -17.5px;
+
+    
+
+    &__wrapperContent {
+        height: 1223px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 15px;
+        margin-right: -15px;
+
+        @media (max-width: 760px) {}
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #8B97AE;
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #3D4050;
+            border-radius: 3px;
+        }
+
+        .sectionPostsList {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -17.5px;
+
+            @media (max-width: 960px) {
+                margin: -10px;
+            }
+
+            @media (max-width: 500px) {
+                justify-content: center;
+            }
+        }
     }
+
+
 }
