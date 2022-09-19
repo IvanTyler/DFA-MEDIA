@@ -16,4 +16,4 @@
 
 Технологии которые использовал:
 - Beckend node js
-- Frontend reacr + redux, typeScript, scss
+- Frontend react + redux, typeScript, scss
